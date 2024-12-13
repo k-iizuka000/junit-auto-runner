@@ -1,1 +1,1 @@
-# junit-auto-runner
+# junit-support-plugin
