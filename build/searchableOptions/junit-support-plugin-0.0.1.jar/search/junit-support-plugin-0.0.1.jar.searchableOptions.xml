@@ -1,0 +1,13 @@
+<options>
+  <configurable id="preferences.keymap" configurable_name="Keymap">
+    <option name="apply" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="from" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="junit" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="md" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="rules" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="tests" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="to" path="ActionManager" hit="Apply rules from rules.md to JUnit tests" />
+    <option name="junit" path="ActionManager" hit="JUnit Support" />
+    <option name="support" path="ActionManager" hit="JUnit Support" />
+  </configurable>
+</options>

@@ -1,0 +1,15 @@
+<idea-plugin>
+  <idea-version since-build="231.0" />
+  <!-- プラグインID、名前、バージョン、ベンダーなど -->
+  <id>com.example.junitsupport</id>
+  <name>JUnit Support</name>
+  <version>0.0.1</version>
+  <vendor>Example</vendor>
+  <!-- action定義 -->
+  <actions>
+    <action id="com.example.junitsupport.JUnitSupportAction" class="com.example.junitsupport.actions.JUnitSupportAction" text="JUnit Support" description="Apply rules from rules.md to JUnit tests">
+      <!-- 右クリックメニューに表示するためのグループ指定 -->
+      <add-to-group group-id="ProjectViewPopupMenu" anchor="last" />
+    </action>
+  </actions>
+</idea-plugin>

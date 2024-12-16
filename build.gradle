@@ -1,0 +1,56 @@
+plugins {
+    id "java"
+    id "org.jetbrains.intellij" version "1.11.0"
+}
+
+group "com.example.junitsupport"
+version "0.0.1"
+
+repositories {
+    mavenCentral()
+    gradlePluginPortal()
+}
+
+intellij {
+    version = "2023.1"
+    plugins = ["java"]
+    updateSinceUntilBuild = false
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+// 依存関係はここ
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher:1.9.3'
+}
+
+// タスク定義はここ
+tasks {
+    // プラグインのパッケージング（.zip）を作る
+    buildPlugin {
+        dependsOn "patchPluginXml"
+    }
+
+    // テスト実行タスク設定
+    test {
+        useJUnitPlatform() // JUnit5ベースでテストできるようにする
+    }
+
+    // IntelliJ上でプラグインをテスト実行（IDE起動）
+    runIde {
+        // runIde時に使用するJavaバージョン・IDEバージョンは上記設定に依存
+    }
+
+    patchPluginXml {
+        version = project.version
+        // changeNotes = file("CHANGELOG.md").text
+        sinceBuild = "231.0"
+        untilBuild = "" // 空にすれば上限なし
+    }
+}
